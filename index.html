@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./Assest/icon_02.png" type="image/x-icon">
   <title>Airsoft Rock Galactic</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -11,17 +12,24 @@
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center py-3 px-4">
       <div class="flex items-center space-x-2">
-        <img src="./Assest/Gemini_Generated_Image_opasicopasicopas.png" alt="Logo" class="w-12 h-12 rounded-full shadow-md">
-        <h1 class="text-2xl font-bold tracking-wide">Airsoft Rock Galactic</h1>
+        <img src="./Assest/icon_01.png" alt="Logo" class="w-12 h-12">
+        <a href="index.html">
+          <h1 class="text-2xl font-bold tracking-wide">Airsoft Rock Galactic</h1>
+        </a>
       </div>
-      <button class="bg-neutral-700 hover:bg-neutral-900 text-white px-4 py-2 rounded-lg transition" id="bt-seccion">
+      <div>
+        <button class="bg-neutral-700 hover:bg-neutral-900 text-white px-4 py-2 rounded-lg transition" id="bt-seccion">
         Iniciar sesión
       </button>
+      <button class="bg-neutral-700 hover:bg-neutral-900 text-white px-4 py-2 rounded-lg transition" id="bt-seccion">
+        Registrarse
+      </button>
+      </div>
     </div>
 
     <nav class="bg-gray-200">
       <ul class="flex justify-center space-x-8 py-2 text-sm font-medium uppercase tracking-wide">
-        <li><a href="#" class="hover:text-neutral-700">Armas</a></li>
+        <li><a href="Armas.html" class="hover:text-neutral-700">Armas</a></li>
         <li><a href="#" class="hover:text-neutral-700">Vestimenta</a></li>
         <li><a href="#" class="hover:text-neutral-700">Munición</a></li>
         <li><a href="#" class="hover:text-neutral-700">Extras</a></li>
@@ -43,7 +51,9 @@
   <section categorias class="p-2">
     <h2 class="font-bold text-center text-3xl">CATEGORIAS</h2>
     <div class="flex flex-wrap justify-center p-2">
+      <a href="Blog_RifleAsalto.html">
         <img src="./Assest/categorias/cat_05.png" alt="" class="h-60 hover:scale-105 transition">
+      </a>
         <img src="./Assest/categorias/cat_04.png" alt="" class="h-60 hover:scale-105 transition">
         <img src="./Assest/categorias/cat_03.png" alt="" class="h-60 hover:scale-105 transition">
         <img src="./Assest/categorias/cat_02.png" alt="" class="h-60 hover:scale-105 transition">
@@ -57,15 +67,15 @@
     </h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
-        <img src="./Assest/armas/M4A1_Carbine.png" alt="M4A1 Carbine" class="p-5">
+      <div onclick="window.location.href='m_4_a_1_carbine_product_page.html'" class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/M4A1_Carbine/M4A1_Carbine.png" alt="M4A1 Carbine" class="p-5">
         <div class="p-4">
           <h3 class="text-lg font-bold">M4A1 Carbine</h3>
-          <p class="text-sm text-gray-600 mt-1">
+          <p class="text-sm text-gray-600 mt-1 h-16">
             Rifle de asalto eléctrico (AEG). Versátil y personalizable, ideal para principiantes y veteranos.
           </p>
-          <p class="mt-3 text-center text-xl font-mono font-bold text-neutral-700">150.000 CLP</p>
-          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">150.000 CLP</p>
+          <button  onclick="window.location.href='m_4_a_1_carbine_product_page.html'" class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
             Comprar
           </button>
         </div>
@@ -75,10 +85,10 @@
         <img src="./Assest/armas/AK-47_Tactical.png" alt="AK-47 Tactical" class="p-5">
         <div class="p-4">
           <h3 class="text-lg font-bold">AK-47 Tactical</h3>
-          <p class="text-sm text-gray-600 mt-1">
+          <p class="text-sm text-gray-600 mt-1 h-16">
             Rifle de asalto eléctrico o gas, Réplica del clásico fusil soviético Robusto, fiable y con gran capacidad de cargado.
           </p>
-          <p class="mt-3 text-center text-xl font-mono font-bold text-neutral-700">170.000 CLP</p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">170.000 CLP</p>
           <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
             Comprar
           </button>
@@ -89,10 +99,10 @@
         <img src="./Assest/armas/Glock_17.png" alt="Glock 17" class="p-5">
         <div class="p-4">
           <h3 class="text-lg font-bold">Glock 17</h3>
-          <p class="text-sm text-gray-600 mt-1">
-            Pistola de gas (GBB) semiautomática ligera, usada como arma secundaria. Tiene gran realismo gracias a su retroceso.
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Pistola de gas (GBB) semiautomática ligera. Tiene gran realismo gracias a su retroceso.
           </p>
-          <p class="mt-3 text-center text-xl font-mono font-bold text-neutral-700">60.000 CLP</p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">60.000 CLP</p>
           <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
             Comprar
           </button>
@@ -102,10 +112,10 @@
         <img src="./Assest/armas/Desert_Eagle .50AE.png" alt="Desert Eagle .50AE" class="p-5">
         <div class="p-4">
           <h3 class="text-lg font-bold">Desert Eagle .50AE</h3>
-          <p class="text-sm text-gray-600 mt-1">
-            Pistola de gas pesada conocida por su tamaño e impacto visual. En airsoft es una secundaria potente, aunque menos práctica que otras pistolas.
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Pistola de gas pesada conocida por su tamaño e impacto visual. Aunque menos práctica que otras pistolas.
           </p>
-          <p class="mt-3 text-center text-xl font-mono font-bold text-neutral-700">80.000 CLP</p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">80.000 CLP</p>
           <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
             Comprar
           </button>

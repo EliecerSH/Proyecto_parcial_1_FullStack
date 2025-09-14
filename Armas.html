@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./Assest/icon_02.png" type="image/x-icon">
+  <title>Airsoft Rock Galactic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-3 px-4">
+      <div class="flex items-center space-x-2">
+        <img src="./Assest/icon_01.png" alt="Logo" class="w-12 h-12">
+        <a href="index.html">
+          <h1 class="text-2xl font-bold tracking-wide">Airsoft Rock Galactic</h1>
+        </a>
+      </div>
+      <button class="bg-neutral-700 hover:bg-neutral-900 text-white px-4 py-2 rounded-lg transition" id="bt-seccion">
+        Iniciar sesión
+      </button>
+    </div>
+
+    <nav class="bg-gray-200">
+      <ul class="flex justify-center space-x-8 py-2 text-sm font-medium uppercase tracking-wide">
+        <li><a href="#" class="hover:text-neutral-700">Armas</a></li>
+        <li><a href="#" class="hover:text-neutral-700">Vestimenta</a></li>
+        <li><a href="#" class="hover:text-neutral-700">Munición</a></li>
+        <li><a href="#" class="hover:text-neutral-700">Extras</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section info_page class="relative">
+    <img src="./Assest/img_01.jpg" alt="Banner Airsoft" class="w-full h-[400px] object-cover brightness-75">
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
+      <h2 class="text-4xl font-extrabold text-white drop-shadow-lg">Tu tienda online de Airsoft</h2>
+      <p class="mt-3 max-w-2xl text-lg text-gray-200">
+        Réplicas, accesorios y equipamiento para que vivas la adrenalina, estrategia y acción del airsoft. 
+        Productos de calidad para principiantes y jugadores experimentados.
+      </p>
+    </div>
+  </section>
+
+  <section Productos class="container mx-auto py-10 px-4">
+    <h2 class="text-3xl font-bold text-center mb-8 border-b-4 border-neutral-700 inline-block pb-2">
+      Productos: Armas
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div onclick="window.location.href='m_4_a_1_carbine_product_page.html'" class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/M4A1_Carbine/M4A1_Carbine.png" alt="M4A1 Carbine" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">M4A1 Carbine</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Rifle de asalto eléctrico (AEG). Versátil y personalizable, ideal para principiantes y veteranos.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">150.000 CLP</p>
+          <button onclick="window.location.href='m_4_a_1_carbine_product_page.html'" class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/AK-47_Tactical.png" alt="AK-47 Tactical" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">AK-47 Tactical</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Rifle de asalto eléctrico o gas, Réplica del clásico fusil soviético Robusto, fiable y con gran capacidad de cargado.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">170.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/Glock_17.png" alt="Glock 17" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">Glock 17</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Pistola de gas (GBB) semiautomática ligera. Tiene gran realismo gracias a su retroceso.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">60.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/Desert_Eagle .50AE.png" alt="Desert Eagle .50AE" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">Desert Eagle .50AE</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Pistola de gas pesada conocida por su tamaño e impacto visual. Aunque menos práctica que otras pistolas.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">80.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/FN _SCAR-L.png" alt="FN SCAR-L" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">FN SCAR-L</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Rifle de asalto eléctrico (AEG). Modular, con excelente precisión y diseño moderno.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">180.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/HK416D.png" alt="HK416D" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">HK416D</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Variante moderna del M4 con mejor ergonomía y precisión. Muy usado en milsim.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">150.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/M249_SAW.png" alt="M249 SAW" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">M249 SAW</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Réplica de apoyo con gran cadencia de fuego. Ideal para cubrir a compañeros.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">200.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/MP5_Submachine_Gun.png" alt="MP5 Submachine Gun" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">MP5 Submachine Gun</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Subfusil eléctrico (AEG). Compacto, perfecto para juegos en interiores. Ligero y con gran cadencia de disparo.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">100.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/P90.png" alt="P90" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">P90</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Subfusil eléctrico. diseño futurista y cargador superior. Popular en escenarios de combate cercano.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">130.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/Shotgun_M870_Tactical.png" alt="M870 Tactical" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">M870 Tactical</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Escopeta táctica de corto alcance. Ideal para combates en espacios cerrados.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">160.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/Sniper_Rifle_L96_AWS.png" alt="Rifle L96 AWS" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">Rifle L96 AWS</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Réplica de precisión, usada por jugadores de rol de francotirador. Disparo certero y gran alcance.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">220.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/UMP45.png" alt="MP5 Submachine Gun" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">MP5 Submachine Gun</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Compacto, perfecto para juegos en interiores (CQB). Ligero y con gran cadencia de disparo.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">120.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+      
+
+    </div>
+  </section>
+
+  <footer class="bg-neutral-800 text-gray-300 text-center py-6 mt-10">
+    <p>&copy; 2025 Airsoft Rock Galactic - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
