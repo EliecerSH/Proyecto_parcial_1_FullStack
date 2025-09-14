@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración - Airsoft Rock Galactic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Estilos personalizados para mejorar la apariencia  aaa */
+    .sidebar {
+      width: 250px;
+      transition: all 0.3s ease;
+    }
+    .main-content {
+      margin-left: 250px;
+      transition: all 0.3s ease;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 80px;
+      }
+      .main-content {
+        margin-left: 80px;
+      }
+      .sidebar .menu-text {
+        display: none;
+      }
+    }
+    /* Estilo para tablas */
+    table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    th {
+      background-color: #f7fafc;
+      font-weight: 600;
+    }
+    tr:hover {
+      background-color: #f8fafc;
+    }
+    /* Estilo para formularios */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e0;
+      border-radius: 0.375rem;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #4299e1;
+      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+    }
+    .error {
+      color: #e53e3e;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.375rem;
+      font-weight: 500;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background-color: #4299e1;
+      color: white;
+    }
+    .btn-primary:hover {
+      background-color: #3182ce;
+    }
+    .btn-danger {
+      background-color: #e53e3e;
+      color: white;
+    }
+    .btn-danger:hover {
+      background-color: #c53030;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-3 px-4">
+      <div class="flex items-center space-x-2">
+        <img src="./Assest/icon_01.png" alt="Logo" class="w-12 h-12">
+        <a href="index.html">
+          <h1 class="text-2xl font-bold tracking-wide">Airsoft Rock Galactic</h1>
+        </a>
+        <span class="text-sm bg-neutral-700 text-white px-2 py-1 rounded">Admin</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <span class="text-sm">Hola, Administrador</span>
+        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition">
+          Cerrar sesión
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="flex">
+    <!-- Sidebar -->
+    <aside class="sidebar bg-neutral-800 text-white min-h-screen fixed h-full overflow-y-auto">
+      <nav class="p-4">
+        <ul class="space-y-2">
+          <li>
+            <a href="#dashboard" class="flex items-center p-2 rounded hover:bg-neutral-700 transition">
+              <i class="fas fa-tachometer-alt w-5 mr-3"></i> <span class="menu-text">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#productos" class="flex items-center p-2 rounded hover:bg-neutral-700 transition">
+              <i class="fas fa-gun w-5 mr-3"></i> <span class="menu-text">Productos</span>
+            </a>
+          </li>
+          <li>
+            <a href="#categorias" class="flex items-center p-2 rounded hover:bg-neutral-700 transition">
+              <i class="fas fa-tags w-5 mr-3"></i> <span class="menu-text">Categorías</span>
+            </a>
+          </li>
+          <li>
+            <a href="#pedidos" class="flex items-center p-2 rounded hover:bg-neutral-700 transition">
+              <i class="fas fa-shopping-cart w-5 mr-3"></i> <span class="menu-text">Pedidos</span>
+            </a>
+          </li>
+          <li>
+            <a href="#usuarios" class="flex items-center p-2 rounded hover:bg-neutral-700 transition">
+              <i class="fas fa-users w-5 mr-3"></i> <span class="menu-text">Usuarios</span>
+            </a>
+          </li>
+          <li>
+            <a href="#blog" class="flex items-center p-2 rounded hover:bg-neutral-700 transition">
+              <i class="fas fa-blog w-5 mr-3"></i> <span class="menu-text">Blog</span>
+            </a>
+          </li>
+          <li>
+            <a href="#configuracion" class="flex items-center p-2 rounded hover:bg-neutral-700 transition">
+              <i class="fas fa-cog w-5 mr-3"></i> <span class="menu-text">Configuración</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content flex-1 p-6">
+      <!-- Dashboard -->
+      <section id="dashboard" class="mb-8">
+        <h2 class="text-2xl font-bold mb-6">Dashboard</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="flex items-center">
+              <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                <i class="fas fa-shopping-cart text-xl"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-gray-500">Pedidos Hoy</p>
+                <h3 class="text-2xl font-bold">12</h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="flex items-center">
+              <div class="p-3 rounded-full bg-green-100 text-green-600">
+                <i class="fas fa-dollar-sign text-xl"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-gray-500">Ingresos Hoy</p>
+                <h3 class="text-2xl font-bold">$1,240,000</h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="flex items-center">
+              <div class="p-3 rounded-full bg-purple-100 text-purple-600">
+                <i class="fas fa-users text-xl"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-gray-500">Usuarios Registrados</p>
+                <h3 class="text-2xl font-bold">154</h3>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="flex items-center">
+              <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                <i class="fas fa-gun text-xl"></i>
+              </div>
+              <div class="ml-4">
+                <p class="text-gray-500">Productos</p>
+                <h3 class="text-2xl font-bold">42</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-lg font-bold mb-4">Pedidos Recientes</h3>
+            <div class="overflow-x-auto">
+              <table>
+                <thead>
+                  <tr class="border-b">
+                    <th class="py-2 text-left">ID</th>
+                    <th class="py-2 text-left">Cliente</th>
+                    <th class="py-2 text-left">Total</th>
+                    <th class="py-2 text-left">Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b">
+                    <td class="py-2">#ORD-1256</td>
+                    <td class="py-2">Juan Pérez</td>
+                    <td class="py-2">$150,000</td>
+                    <td class="py-2"><span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Completado</span></td>
+                  </tr>
+                  <tr class="border-b">
+                    <td class="py-2">#ORD-1255</td>
+                    <td class="py-2">María González</td>
+                    <td class="py-2">$230,000</td>
+                    <td class="py-2"><span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">Pendiente</span></td>
+                  </tr>
+                  <tr class="border-b">
+                    <td class="py-2">#ORD-1254</td>
+                    <td class="py-2">Carlos López</td>
+                    <td class="py-2">$80,000</td>
+                    <td class="py-2"><span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Enviado</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-lg font-bold mb-4">Productos Populares</h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <img src="./Assest/armas/M4A1_Carbine/M4A1_Carbine.png" alt="M4A1 Carbine" class="w-12 h-12 object-contain">
+                <div class="ml-3">
+                  <p class="font-medium">M4A1 Carbine</p>
+                  <p class="text-sm text-gray-500">12 ventas</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <img src="./Assest/armas/AK-47_Tactical.png" alt="AK-47 Tactical" class="w-12 h-12 object-contain">
+                <div class="ml-3">
+                  <p class="font-medium">AK-47 Tactical</p>
+                  <p class="text-sm text-gray-500">8 ventas</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <img src="./Assest/armas/Glock_17.png" alt="Glock 17" class="w-12 h-12 object-contain">
+                <div class="ml-3">
+                  <p class="font-medium">Glock 17</p>
+                  <p class="text-sm text-gray-500">15 ventas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Gestión de Productos -->
+      <section id="productos" class="mb-8 hidden">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold">Gestión de Productos</h2>
+          <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition flex items-center" onclick="mostrarFormularioProducto()">
+            <i class="fas fa-plus mr-2"></i> Nuevo Producto
+          </button>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+          <div class="p-4 border-b flex justify-between items-center">
+            <div class="flex items-center">
+              <input type="text" placeholder="Buscar producto..." class="border rounded px-3 py-2 w-64">
+              <button class="ml-2 bg-neutral-700 hover:bg-neutral-900 text-white px-3 py-2 rounded">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+            <div>
+              <select class="border rounded px-3 py-2">
+                <option>Todas las categorías</option>
+                <option>Rifles de Asalto</option>
+                <option>Pistolas</option>
+                <option>Subfusiles</option>
+                <option>Escopetas</option>
+                <option>Rifles de Francotirador</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="overflow-x-auto">
+            <table>
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="py-3 px-4 text-left">Producto</th>
+                  <th class="py-3 px-4 text-left">Categoría</th>
+                  <th class="py-3 px-4 text-left">Precio</th>
+                  <th class="py-3 px-4 text-left">Stock</th>
+                  <th class="py-3 px-4 text-left">Estado</th>
+                  <th class="py-3 px-4 text-left">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center">
+                      <img src="./Assest/armas/M4A1_Carbine/M4A1_Carbine.png" alt="M4A1 Carbine" class="w-10 h-10 object-contain mr-3">
+                      <span>M4A1 Carbine</span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4">Rifles de Asalto</td>
+                  <td class="py-3 px-4">$150.000</td>
+                  <td class="py-3 px-4">15</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Activo</span></td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center">
+                      <img src="./Assest/armas/AK-47_Tactical.png" alt="AK-47 Tactical" class="w-10 h-10 object-contain mr-3">
+                      <span>AK-47 Tactical</span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4">Rifles de Asalto</td>
+                  <td class="py-3 px-4">$170.000</td>
+                  <td class="py-3 px-4">8</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Activo</span></td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center">
+                      <img src="./Assest/armas/Glock_17.png" alt="Glock 17" class="w-10 h-10 object-contain mr-3">
+                      <span>Glock 17</span>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4">Pistolas</td>
+                  <td class="py-3 px-4">$60.000</td>
+                  <td class="py-3 px-4">22</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Activo</span></td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Formulario de Producto (oculto inicialmente) -->
+      <section id="formulario-producto" class="mb-8 hidden">
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-2xl font-bold mb-6">Nuevo Producto</h2>
+          
+          <form id="product-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="form-group">
+              <label for="product-name">Nombre del Producto *</label>
+              <input type="text" id="product-name" name="name" required maxlength="100">
+              <div class="error" id="product-name-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="product-category">Categoría *</label>
+              <select id="product-category" name="category" required>
+                <option value="">Seleccione una categoría</option>
+                <option value="assault_rifle">Rifles de Asalto</option>
+                <option value="pistol">Pistolas</option>
+                <option value="smg">Subfusiles</option>
+                <option value="shotgun">Escopetas</option>
+                <option value="sniper">Rifles de Francotirador</option>
+              </select>
+              <div class="error" id="product-category-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="product-price">Precio (CLP) *</label>
+              <input type="number" id="product-price" name="price" min="0" step="0.01" required>
+              <div class="error" id="product-price-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="product-stock">Stock *</label>
+              <input type="number" id="product-stock" name="stock" min="0" required>
+              <div class="error" id="product-stock-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="product-critical">Stock Crítico</label>
+              <input type="number" id="product-critical" name="critical_stock" min="0">
+              <div class="error" id="product-critical-error"></div>
+            </div>
+            
+            <div class="form-group md:col-span-2">
+              <label for="product-description">Descripción</label>
+              <textarea id="product-description" name="description" maxlength="500" rows="3"></textarea>
+              <div class="error" id="product-description-error"></div>
+            </div>
+            
+            <div class="form-group md:col-span-2">
+              <label for="product-image">Imagen del Producto</label>
+              <input type="file" id="product-image" name="image" accept="image/*">
+              <div class="error" id="product-image-error"></div>
+            </div>
+            
+            <div class="md:col-span-2 flex justify-end space-x-4">
+              <button type="button" class="btn bg-gray-300 hover:bg-gray-400" onclick="ocultarFormularioProducto()">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Guardar Producto</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      
+      <!-- Gestión de Categorías -->
+      <section id="categorias" class="mb-8 hidden">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold">Gestión de Categorías</h2>
+          <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition flex items-center">
+            <i class="fas fa-plus mr-2"></i> Nueva Categoría
+          </button>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+          <div class="overflow-x-auto">
+            <table>
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="py-3 px-4 text-left">Nombre</th>
+                  <th class="py-3 px-4 text-left">Descripción</th>
+                  <th class="py-3 px-4 text-left">Productos</th>
+                  <th class="py-3 px-4 text-left">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="py-3 px-4 font-medium">Rifles de Asalto</td>
+                  <td class="py-3 px-4">Rifles de uso general para múltiples escenarios</td>
+                  <td class="py-3 px-4">15</td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4 font-medium">Pistolas</td>
+                  <td class="py-3 px-4">Armas secundarias para combate cercano</td>
+                  <td class="py-3 px-4">8</td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4 font-medium">Subfusiles</td>
+                  <td class="py-3 px-4">Armas compactas con alta cadencia de fuego</td>
+                  <td class="py-3 px-4">5</td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Gestión de Pedidos -->
+      <section id="pedidos" class="mb-8 hidden">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold">Gestión de Pedidos</h2>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+          <div class="p-4 border-b flex justify-between items-center">
+            <div class="flex items-center">
+              <input type="text" placeholder="Buscar pedido..." class="border rounded px-3 py-2 w-64">
+              <button class="ml-2 bg-neutral-700 hover:bg-neutral-900 text-white px-3 py-2 rounded">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+            <div>
+              <select class="border rounded px-3 py-2">
+                <option>Todos los estados</option>
+                <option>Pendiente</option>
+                <option>Procesando</option>
+                <option>Enviado</option>
+                <option>Completado</option>
+                <option>Cancelado</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="overflow-x-auto">
+            <table>
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="py-3 px-4 text-left">ID Pedido</th>
+                  <th class="py-3 px-4 text-left">Cliente</th>
+                  <th class="py-3 px-4 text-left">Fecha</th>
+                  <th class="py-3 px-4 text-left">Total</th>
+                  <th class="py-3 px-4 text-left">Estado</th>
+                  <th class="py-3 px-4 text-left">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="py-3 px-4">#ORD-1256</td>
+                  <td class="py-3 px-4">Juan Pérez</td>
+                  <td class="py-3 px-4">15/04/2025</td>
+                  <td class="py-3 px-4">$150,000</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Completado</span></td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4">#ORD-1255</td>
+                  <td class="py-3 px-4">María González</td>
+                  <td class="py-3 px-4">14/04/2025</td>
+                  <td class="py-3 px-4">$230,000</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">Pendiente</span></td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4">#ORD-1254</td>
+                  <td class="py-3 px-4">Carlos López</td>
+                  <td class="py-3 px-4">13/04/2025</td>
+                  <td class="py-3 px-4">$80,000</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Enviado</span></td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Gestión de Usuarios -->
+      <section id="usuarios" class="mb-8 hidden">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold">Gestión de Usuarios</h2>
+          <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition flex items-center" onclick="mostrarFormularioUsuario()">
+            <i class="fas fa-plus mr-2"></i> Nuevo Usuario
+          </button>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+          <div class="p-4 border-b flex justify-between items-center">
+            <div class="flex items-center">
+              <input type="text" placeholder="Buscar usuario..." class="border rounded px-3 py-2 w-64">
+              <button class="ml-2 bg-neutral-700 hover:bg-neutral-900 text-white px-3 py-2 rounded">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+            <div>
+              <select class="border rounded px-3 py-2">
+                <option>Todos los roles</option>
+                <option>Administrador</option>
+                <option>Vendedor</option>
+                <option>Cliente</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="overflow-x-auto">
+            <table>
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="py-3 px-4 text-left">Usuario</th>
+                  <th class="py-3 px-4 text-left">Email</th>
+                  <th class="py-3 px-4 text-left">Rol</th>
+                  <th class="py-3 px-4 text-left">Estado</th>
+                  <th class="py-3 px-4 text-left">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center">
+                      <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div>
+                        <p class="font-medium">Juan Pérez</p>
+                        <p class="text-sm text-gray-500">19.011.022-K</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4">juan.perez@duoc.cl</td>
+                  <td class="py-3 px-4">Administrador</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Activo</span></td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center">
+                      <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div>
+                        <p class="font-medium">María González</p>
+                        <p class="text-sm text-gray-500">18.345.678-9</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4">maria.gonzalez@profesor.duoc.cl</td>
+                  <td class="py-3 px-4">Vendedor</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Activo</span></td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center">
+                      <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                        <i class="fas fa-user"></i>
+                      </div>
+                      <div>
+                        <p class="font-medium">Carlos López</p>
+                        <p class="text-sm text-gray-500">20.123.456-7</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4">carlos.lopez@gmail.com</td>
+                  <td class="py-3 px-4">Cliente</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">Inactivo</span></td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Formulario de Usuario (oculto inicialmente) -->
+      <section id="formulario-usuario" class="mb-8 hidden">
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-2xl font-bold mb-6">Nuevo Usuario</h2>
+          
+          <form id="user-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="form-group">
+              <label for="user-run">RUN *</label>
+              <input type="text" id="user-run" name="run" required minlength="7" maxlength="9" pattern="[0-9Kk]+">
+              <div class="error" id="user-run-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="user-name">Nombre *</label>
+              <input type="text" id="user-name" name="name" required maxlength="50">
+              <div class="error" id="user-name-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="user-lastname">Apellidos *</label>
+              <input type="text" id="user-lastname" name="lastname" required maxlength="100">
+              <div class="error" id="user-lastname-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="user-email">Correo Electrónico *</label>
+              <input type="email" id="user-email" name="email" required maxlength="100">
+              <div class="error" id="user-email-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="user-birthdate">Fecha de Nacimiento</label>
+              <input type="date" id="user-birthdate" name="birthdate">
+              <div class="error" id="user-birthdate-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="user-role">Tipo de Usuario *</label>
+              <select id="user-role" name="role" required>
+                <option value="">Seleccione un rol</option>
+                <option value="admin">Administrador</option>
+                <option value="seller">Vendedor</option>
+                <option value="client">Cliente</option>
+              </select>
+              <div class="error" id="user-role-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="user-region">Región *</label>
+              <select id="user-region" name="region" required>
+                <option value="">Seleccione una región</option>
+                <option value="rm">Región Metropolitana</option>
+                <option value="v">Valparaíso</option>
+                <option value="viii">Biobío</option>
+                <!-- Más opciones de región -->
+              </select>
+              <div class="error" id="user-region-error"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="user-commune">Comuna *</label>
+              <select id="user-commune" name="commune" required>
+                <option value="">Seleccione una comuna</option>
+                <!-- Las comunas se cargarán dinámicamente según la región seleccionada -->
+              </select>
+              <div class="error" id="user-commune-error"></div>
+            </div>
+            
+            <div class="form-group md:col-span-2">
+              <label for="user-address">Dirección *</label>
+              <input type="text" id="user-address" name="address" required maxlength="300">
+              <div class="error" id="user-address-error"></div>
+            </div>
+            
+            <div class="md:col-span-2 flex justify-end space-x-4">
+              <button type="button" class="btn bg-gray-300 hover:bg-gray-400" onclick="ocultarFormularioUsuario()">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      
+      <!-- Gestión de Blog -->
+      <section id="blog" class="mb-8 hidden">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold">Gestión de Blog</h2>
+          <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition flex items-center">
+            <i class="fas fa-plus mr-2"></i> Nueva Entrada
+          </button>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+          <div class="overflow-x-auto">
+            <table>
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="py-3 px-4 text-left">Título</th>
+                  <th class="py-3 px-4 text-left">Categoría</th>
+                  <th class="py-3 px-4 text-left">Fecha</th>
+                  <th class="py-3 px-4 text-left">Estado</th>
+                  <th class="py-3 px-4 text-left">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b">
+                  <td class="py-3 px-4 font-medium">Rifles de Asalto en Airsoft</td>
+                  <td class="py-3 px-4">Armas</td>
+                  <td class="py-3 px-4">10/04/2025</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Publicado</span></td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4 font-medium">Consejos para Mantenimiento</td>
+                  <td class="py-3 px-4">Consejos</td>
+                  <td class="py-3 px-4">05/04/2025</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Publicado</span></td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="border-b">
+                  <td class="py-3 px-4 font-medium">Nuevos Productos 2025</td>
+                  <td class="py-3 px-4">Novedades</td>
+                  <td class="py-3 px-4">01/04/2025</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">Borrador</span></td>
+                  <td class="py-3 px-4">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="text-red-600 hover:text-red-800">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Configuración -->
+      <section id="configuracion" class="mb-8 hidden">
+        <h2 class="text-2xl font-bold mb-6">Configuración</h2>
+        
+        <div class="bg-white rounded-lg shadow p-6">
+          <h3 class="text-xl font-bold mb-4">Configuración General</h3>
+          
+          <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="form-group">
+              <label for="site-name">Nombre del Sitio</label>
+              <input type="text" id="site-name" value="Airsoft Rock Galactic">
+            </div>
+            
+            <div class="form-group">
+              <label for="site-email">Email de Contacto</label>
+              <input type="email" id="site-email" value="contacto@airsoftrockgalactic.cl">
+            </div>
+            
+            <div class="form-group">
+              <label for="site-phone">Teléfono de Contacto</label>
+              <input type="tel" id="site-phone" value="+56 2 2345 6789">
+            </div>
+            
+            <div class="form-group">
+              <label for="site-address">Dirección</label>
+              <input type="text" id="site-address" value="Av. Principal 123, Santiago">
+            </div>
+            
+            <div class="form-group md:col-span-2">
+              <label for="site-description">Descripción del Sitio</label>
+              <textarea id="site-description" rows="3">Réplicas, accesorios y equipamiento para que vivas la adrenalina, estrategia y acción del airsoft.</textarea>
+            </div>
+            
+            <div class="md:col-span-2 flex justify-end">
+              <button type="submit" class="btn btn-primary">Guardar Configuración</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Almacenamiento de datos en localStorage
+    const initializeLocalStorage = () => {
+      if (!localStorage.getItem('products')) {
+        localStorage.setItem('products', JSON.stringify([]));
+      }
+      if (!localStorage.getItem('users')) {
+        localStorage.setItem('users', JSON.stringify([]));
+      }
+      if (!localStorage.getItem('cart')) {
+        localStorage.setItem('cart', JSON.stringify([]));
+      }
+    };
+    
+    // Inicializar localStorage al cargar la página
+    initializeLocalStorage();
+    
+    // Funciones para mostrar/ocultar secciones
+    function mostrarSeccion(seccionId) {
+      // Ocultar todas las secciones
+      document.querySelectorAll('main > section').forEach(sec => {
+        sec.classList.add('hidden');
+      });
+      
+      // Mostrar la sección seleccionada
+      document.getElementById(seccionId).classList.remove('hidden');
+    }
+    
+    // Navegación del sidebar
+    document.querySelectorAll('aside a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        mostrarSeccion(targetId);
+      });
+    });
+    
+    // Mostrar dashboard por defecto
+    mostrarSeccion('dashboard');
+    
+    // Funciones para formularios de productos
+    function mostrarFormularioProducto() {
+      document.getElementById('productos').classList.add('hidden');
+      document.getElementById('formulario-producto').classList.remove('hidden');
+    }
+    
+    function ocultarFormularioProducto() {
+      document.getElementById('formulario-producto').classList.add('hidden');
+      document.getElementById('productos').classList.remove('hidden');
+    }
+    
+    // Funciones para formularios de usuarios
+    function mostrarFormularioUsuario() {
+      document.getElementById('usuarios').classList.add('hidden');
+      document.getElementById('formulario-usuario').classList.remove('hidden');
+    }
+    
+    function ocultarFormularioUsuario() {
+      document.getElementById('formulario-usuario').classList.add('hidden');
+      document.getElementById('usuarios').classList.remove('hidden');
+    }
+    
+    // Validación de formulario de productos
+    document.getElementById('product-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      let isValid = true;
+      
+      // Validar nombre
+      const name = document.getElementById('product-name');
+      const nameError = document.getElementById('product-name-error');
+      if (!name.value.trim()) {
+        nameError.textContent = 'El nombre del producto es requerido';
+        isValid = false;
+      } else if (name.value.length > 100) {
+        nameError.textContent = 'El nombre no puede tener más de 100 caracteres';
+        isValid = false;
+      } else {
+        nameError.textContent = '';
+      }
+      
+      // Validar categoría
+      const category = document.getElementById('product-category');
+      const categoryError = document.getElementById('product-category-error');
+      if (!category.value) {
+        categoryError.textContent = 'Debe seleccionar una categoría';
+        isValid = false;
+      } else {
+        categoryError.textContent = '';
+      }
+      
+      // Validar precio
+      const price = document.getElementById('product-price');
+      const priceError = document.getElementById('product-price-error');
+      if (!price.value || parseFloat(price.value) < 0) {
+        priceError.textContent = 'El precio debe ser un valor mayor o igual a 0';
+        isValid = false;
+      } else {
+        priceError.textContent = '';
+      }
+      
+      // Validar stock
+      const stock = document.getElementById('product-stock');
+      const stockError = document.getElementById('product-stock-error');
+      if (!stock.value || parseInt(stock.value) < 0) {
+        stockError.textContent = 'El stock debe ser un número entero mayor o igual a 0';
+        isValid = false;
+      } else {
+        stockError.textContent = '';
+      }
+      
+      // Si es válido, procesar el formulario
+      if (isValid) {
+        // Guardar producto en localStorage
+        const products = JSON.parse(localStorage.getItem('products')) || [];
+        const newProduct = {
+          id: Date.now(),
+          name: name.value,
+          category: category.value,
+          price: parseFloat(price.value),
+          stock: parseInt(stock.value),
+          critical_stock: document.getElementById('product-critical').value ? parseInt(document.getElementById('product-critical').value) : 0,
+          description: document.getElementById('product-description').value,
+          image: document.getElementById('product-image').value,
+          status: 'active'
+        };
+        
+        products.push(newProduct);
+        localStorage.setItem('products', JSON.stringify(products));
+        
+        alert('Producto guardado correctamente');
+        ocultarFormularioProducto();
+        // Aquí podrías recargar la lista de productos
+      }
+    });
+    
+    // Validación de formulario de usuarios
+    document.getElementById('user-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      let isValid = true;
+      
+      // Validar RUN (formato chileno mejorado)
+      const run = document.getElementById('user-run');
+      const runError = document.getElementById('user-run-error');
+      const runRegex = /^[0-9]{7,8}-?[0-9kK]{1}$/;
+      
+      if (!run.value.trim()) {
+        runError.textContent = 'El RUN es requerido';
+        isValid = false;
+      } else if (!runRegex.test(run.value)) {
+        runError.textContent = 'El RUN debe tener el formato correcto (ej: 12345678-9)';
+        isValid = false;
+      } else {
+        // Validar dígito verificador
+        let runValue = run.value.replace('-', '');
+        const body = runValue.slice(0, -1);
+        let dv = runValue.slice(-1).toUpperCase();
+        
+        // Calcular dígito verificador
+        let suma = 0;
+        let multiplo = 2;
+        
+        for (let i = body.length - 1; i >= 0; i--) {
+          suma += parseInt(body.charAt(i)) * multiplo;
+          multiplo = multiplo === 7 ? 2 : multiplo + 1;
+        }
+        
+        const dvEsperado = 11 - (suma % 11);
+        const dvCalculado = dvEsperado === 11 ? '0' : dvEsperado === 10 ? 'K' : dvEsperado.toString();
+        
+        if (dvCalculado !== dv) {
+          runError.textContent = 'El RUN no es válido (dígito verificador incorrecto)';
+          isValid = false;
+        } else {
+          runError.textContent = '';
+        }
+      }
+      
+      // Validar nombre
+      const name = document.getElementById('user-name');
+      const nameError = document.getElementById('user-name-error');
+      if (!name.value.trim()) {
+        nameError.textContent = 'El nombre es requerido';
+        isValid = false;
+      } else if (name.value.length > 50) {
+        nameError.textContent = 'El nombre no puede tener más de 50 caracteres';
+        isValid = false;
+      } else {
+        nameError.textContent = '';
+      }
+      
+      // Validar apellidos
+      const lastname = document.getElementById('user-lastname');
+      const lastnameError = document.getElementById('user-lastname-error');
+      if (!lastname.value.trim()) {
+        lastnameError.textContent = 'Los apellidos son requeridos';
+        isValid = false;
+      } else if (lastname.value.length > 100) {
+        lastnameError.textContent = 'Los apellidos no pueden tener más de 100 caracteres';
+        isValid = false;
+      } else {
+        lastnameError.textContent = '';
+      }
+      
+      // Validar email
+      const email = document.getElementById('user-email');
+      const emailError = document.getElementById('user-email-error');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const allowedDomains = ['duoc.cl', 'profesor.duoc.cl', 'gmail.com'];
+      
+      if (!email.value.trim()) {
+        emailError.textContent = 'El correo electrónico es requerido';
+        isValid = false;
+      } else if (!emailRegex.test(email.value)) {
+        emailError.textContent = 'El formato del correo electrónico no es válido';
+        isValid = false;
+      } else if (email.value.length > 100) {
+        emailError.textContent = 'El correo electrónico no puede tener más de 100 caracteres';
+        isValid = false;
+      } else {
+        const domain = email.value.split('@')[1];
+        if (!allowedDomains.includes(domain)) {
+          emailError.textContent = 'Solo se permiten correos de @duoc.cl, @profesor.duoc.cl y @gmail.com';
+          isValid = false;
+        } else {
+          emailError.textContent = '';
+        }
+      }
+      
+      // Si es válido, procesar el formulario
+      if (isValid) {
+        // Guardar usuario en localStorage
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const newUser = {
+          id: Date.now(),
+          run: run.value,
+          name: name.value,
+          lastname: lastname.value,
+          email: email.value,
+          birthdate: document.getElementById('user-birthdate').value,
+          role: document.getElementById('user-role').value,
+          region: document.getElementById('user-region').value,
+          commune: document.getElementById('user-commune').value,
+          address: document.getElementById('user-address').value,
+          status: 'active'
+        };
+        
+        users.push(newUser);
+        localStorage.setItem('users', JSON.stringify(users));
+        
+        alert('Usuario guardado correctamente');
+        ocultarFormularioUsuario();
+        // Aquí podrías recargar la lista de usuarios
+      }
+    });
+    
+    // Cargar comunas según región seleccionada
+    document.getElementById('user-region').addEventListener('change', function() {
+      const region = this.value;
+      const communeSelect = document.getElementById('user-commune');
+      communeSelect.innerHTML = '<option value="">Seleccione una comuna</option>';
+      
+      // Simulación de datos de comunas por región
+      const communes = {
+        'rm': ['Santiago', 'Providencia', 'Las Condes', 'Ñuñoa', 'Maipú'],
+        'v': ['Valparaíso', 'Viña del Mar', 'Quilpué', 'Villa Alemana', 'Quillota'],
+        'viii': ['Concepción', 'Talcahuano', 'Chiguayante', 'San Pedro de la Paz', 'Coronel']
+      };
+      
+      if (communes[region]) {
+        communes[region].forEach(commune => {
+          const option = document.createElement('option');
+          option.value = commune.toLowerCase().replace(/\s/g, '_');
+          option.textContent = commune;
+          communeSelect.appendChild(option);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
