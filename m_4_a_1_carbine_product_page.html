@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./Assest/icon_02.png" type="image/x-icon">
+  <title>M4A1 Carbine — Airsoft Rock Galactic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-3 px-4">
+      <div class="flex items-center space-x-2">
+        <img src="./Assest/icon_01.png" alt="Logo" class="w-12 h-12">
+        <a href="index.html">
+          <h1 class="text-2xl font-bold tracking-wide">Airsoft Rock Galactic</h1>
+        </a>
+      </div>
+      <button class="bg-neutral-700 hover:bg-neutral-900 text-white px-4 py-2 rounded-lg transition" id="bt-seccion">
+        Iniciar sesión
+      </button>
+    </div>
+
+    <nav class="bg-gray-200">
+      <ul class="flex justify-center space-x-8 py-2 text-sm font-medium uppercase tracking-wide">
+        <li><a href="Armas.html" class="hover:text-neutral-700">Armas</a></li>
+        <li><a href="#" class="hover:text-neutral-700">Vestimenta</a></li>
+        <li><a href="#" class="hover:text-neutral-700">Munición</a></li>
+        <li><a href="#" class="hover:text-neutral-700">Extras</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section info_page class="relative">
+    <img src="./Assest/armas/blog_rifle_asalto.png" alt="Banner Airsoft" class="w-full h-[150px] object-cover brightness-75">
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
+      <h2 class="text-4xl font-extrabold text-white drop-shadow-lg">Categoria: Rifles de Asalto</h2>
+    </div>
+  </section>
+
+  <main class="container mx-auto py-8 px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <section class="md:col-span-2">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="relative">
+            <img id="mainImg" src="./Assest/armas/M4A1_Carbine/M4A1_Carbine.png" alt="M4A1 Carbine - vista principal" class="w-full h-96 object-contain bg-gray-50 p-6">
+            <div class="absolute top-4 right-4 bg-neutral-800 text-white text-xs rounded px-3 py-1">En stock</div>
+          </div>
+
+          <div class="p-4 flex items-center gap-3 overflow-x-auto">
+            <button class="thumb w-28 h-20 rounded-md overflow-hidden border border-gray-200" data-src="./Assest/armas/M4A1_Carbine/M4A1_Carbine.png">
+              <img src="./Assest/armas/M4A1_Carbine/M4A1_Carbine.png" alt="M4A1 - mini" class="w-full h-full object-cover">
+            </button>
+            <button class="thumb w-28 h-20 rounded-md overflow-hidden border border-gray-200" data-src="./Assest/armas/M4A1_Carbine/M4A1_Carbine_03.png">
+              <img src="./Assest/armas/M4A1_Carbine/M4A1_Carbine_03.png" alt="M4A1 - lateral" class="w-full h-full object-cover">
+            </button>
+            <button class="thumb w-28 h-20 rounded-md overflow-hidden border border-gray-200" data-src="./Assest/armas/M4A1_Carbine/M4A1_Carbine_01.jpeg">
+              <img src="./Assest/armas/M4A1_Carbine/M4A1_Carbine_01.jpeg" alt="M4A1 - detalle" class="w-full h-full object-cover">
+            </button>
+            <button class="thumb w-28 h-20 rounded-md overflow-hidden border border-gray-200" data-src="./Assest/armas/M4A1_Carbine/M4A1_Carbine_02.jpg">
+              <img src="./Assest/armas/M4A1_Carbine/M4A1_Carbine_02.jpg" alt="Accesorios M4A1" class="w-full h-full object-cover">
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-6 bg-white rounded-xl shadow-md p-6">
+          <h2 class="text-2xl font-bold">M4A1 Carbine — Rifle de asalto eléctrico (AEG)</h2>
+          <p class="mt-2 text-gray-600">Versátil, preciso y ampliamente personalizable. Ideal para jugadores que buscan equilibrio entre maniobrabilidad y rendimiento en el campo de juego.</p>
+
+          <ul class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <li class="flex items-start gap-2"><strong>Calibre (BB):</strong> 6 mm</li>
+            <li class="flex items-start gap-2"><strong>Propulsión:</strong> Eléctrico (AEG)</li>
+            <li class="flex items-start gap-2"><strong>Longitud:</strong> 700 - 840 mm (según configuración)</li>
+            <li class="flex items-start gap-2"><strong>Peso aproximado:</strong> 2.6 - 3.4 kg</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="md:col-span-1">
+        <div class="bg-white rounded-xl shadow-lg p-6 sticky top-28">
+          <p class="text-sm text-gray-500">SKU: <span class="font-mono">M4A1-AR-01</span></p>
+          <h3 class="mt-3 text-3xl font-bold text-neutral-700">150.000 CLP</h3>
+
+          <div class="mt-4">
+            <label for="qty" class="text-sm font-medium">Cantidad</label>
+            <input id="qty" type="number" min="1" value="1" class="w-full mt-2 border rounded px-3 py-2">
+          </div>
+
+          <button id="buyBtn" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition">Comprar ahora</button>
+
+          <button id="addCart" class="mt-3 w-full border border-neutral-700 hover:bg-neutral-100 text-neutral-800 py-2 rounded-lg transition">Agregar al carrito</button>
+
+          <div class="mt-4 text-sm text-gray-600">
+            <p><strong>Envío:</strong> Desde 2-4 días hábiles</p>
+            <p class="mt-2"><strong>Garantía:</strong> 6 meses (componentes eléctricos)</p>
+          </div>
+
+          <div class="mt-4 border-t pt-4 text-sm">
+            <p><strong>Pago seguro</strong></p>
+            <p class="text-xs text-gray-500">Aceptamos tarjetas, transferencias y pago en cuotas (sujeto a evaluación)</p>
+          </div>
+        </div>
+
+        <div class="mt-6 bg-white rounded-xl shadow-md p-4">
+          <h4 class="font-bold">Tipos / Versiones</h4>
+          <ul class="mt-3 text-sm space-y-2">
+            <li><strong>Standard AEG:</strong> Versión básica, buena para principiantes.</li>
+            <li><strong>Tactical (M-LOK/RIS):</strong> Rails para accesorios, mejor ergonomía.</li>
+            <li><strong>Enhanced (High torque):</strong> Motor de alta potencia para mayor ROF.</li>
+            <li><strong>Gas Blow Back (GBB) replica:</strong> Si buscas retroceso realista (modelo alternativo).</li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+
+    <section id="caracteristicas" class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-2xl font-bold">Especificaciones técnicas</h3>
+        <table class="w-full mt-4 text-sm">
+          <tbody>
+            <tr class="border-t"><td class="py-2 font-medium">Tipo</td><td class="py-2 text-gray-600">Rifle AEG eléctrico</td></tr>
+            <tr class="border-t"><td class="py-2 font-medium">Velocidad (FPS)</td><td class="py-2 text-gray-600">320 - 380 FPS (según munición y reglaje)</td></tr>
+            <tr class="border-t"><td class="py-2 font-medium">Cargador</td><td class="py-2 text-gray-600">Carga alta (450+ BBs) / mid-cap según versión</td></tr>
+            <tr class="border-t"><td class="py-2 font-medium">Material del cuerpo</td><td class="py-2 text-gray-600">Aluminio y polímero reforzado</td></tr>
+            <tr class="border-t"><td class="py-2 font-medium">Motor</td><td class="py-2 text-gray-600">Motor estándar / high-torque opcional</td></tr>
+            <tr class="border-t"><td class="py-2 font-medium">Bateria</td><td class="py-2 text-gray-600">LiPo 7.4V - 11.1V (según configuración)</td></tr>
+          </tbody>
+        </table>
+
+        <h3 class="mt-6 text-2xl font-bold">Ventajas</h3>
+        <ul id="ventajas" class="mt-3 list-disc list-inside text-gray-700">
+          <li>Alta personalización: soporta miras, linternas, grips y supresores estéticos.</li>
+          <li>Fácil mantenimiento: diseño modular para acceso al gearbox.</li>
+          <li>Buena relación peso-potencia: maniobrable en espacios cerrados o abiertos.</li>
+          <li>Amplia disponibilidad de piezas y upgrades en el mercado.</li>
+        </ul>
+
+        <h3 class="mt-6 text-2xl font-bold">Consejos de uso</h3>
+        <ol class="mt-3 list-decimal list-inside text-gray-700">
+          <li>Usar munición BBs de calidad (0.20g - 0.25g recomendadas para 320-380 FPS).</li>
+          <li>Revisar y lubricar el gearbox cada 1-2 meses según uso.</li>
+          <li>Utilizar baterías y cargadores homologados para evitar fallas eléctricas.</li>
+        </ol>
+
+      </div>
+
+      <aside class="bg-white rounded-xl shadow-md p-6">
+        <h4 class="font-bold">Accesorios recomendados</h4>
+        <ul class="mt-3 text-sm space-y-2">
+          <li>Mira Red Dot / Holográfica</li>
+          <li>Cargadores Mid-cap / Hi-cap</li>
+          <li>Batería LiPo 7.4V + cargador balanceador</li>
+          <li>Kit de hop-up y BBs de 0.25g</li>
+        </ul>
+
+        <div class="mt-6">
+          <a href="#buyBtn" class="block text-center bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded">Comprar M4A1</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="tipos" class="mt-8 bg-white rounded-xl shadow-md p-6">
+      <h3 class="text-2xl font-bold">Variantes en detalle</h3>
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+        <div class="p-4 border rounded">
+          <h5 class="font-bold">Standard AEG</h5>
+          <p class="mt-2 text-gray-600">Configuración básica: ideal para quien comienza. Buen rendimiento y menor costo de mantenimiento.</p>
+        </div>
+        <div class="p-4 border rounded">
+          <h5 class="font-bold">Tactical (RIS / M-LOK)</h5>
+          <p class="mt-2 text-gray-600">Incluye handguard con rieles para instalar accesorios: ópticas, linternas y grips.</p>
+        </div>
+        <div class="p-4 border rounded">
+          <h5 class="font-bold">Enhanced (High torque)</h5>
+          <p class="mt-2 text-gray-600">Mejora interna en motor y engranajes para aumentar ROF y durabilidad bajo uso intensivo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-8 bg-white rounded-xl shadow-md p-6">
+      <h3 class="text-2xl font-bold">Preguntas frecuentes</h3>
+      <div class="mt-4 space-y-3 text-sm text-gray-700">
+        <details class="p-3 border rounded"><summary class="font-medium">¿Puedo usar munición de 0.30g?</summary><p class="mt-2 text-gray-600">Sí, pero a FPS altos puede afectar la precisión. Ajusta el hop-up y comprueba el rendimiento.</p></details>
+        <details class="p-3 border rounded"><summary class="font-medium">¿Se puede usar en juegos con reglas limitadas de FPS?</summary><p class="mt-2 text-gray-600">Sí, ajustando el gearbox o cambiando resortes para cumplir la normativa del campo.</p></details>
+      </div>
+    </section>
+
+    <section Productos class="container mx-auto py-10 px-4">
+    <h2 class="text-3xl font-bold text-center mb-8 border-b-4 border-neutral-700 inline-block pb-2">
+      Productos similares
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/AK-47_Tactical.png" alt="AK-47 Tactical" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">AK-47 Tactical</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Rifle de asalto eléctrico o gas, Réplica del clásico fusil soviético Robusto, fiable y con gran capacidad de cargado.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">170.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/FN _SCAR-L.png" alt="FN SCAR-L" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">FN SCAR-L</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Rifle de asalto eléctrico (AEG). Modular, con excelente precisión y diseño moderno.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">180.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/HK416D.png" alt="HK416D" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">HK416D</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Variante moderna del M4 con mejor ergonomía y precisión. Muy usado en milsim.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">150.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section Productos class="container mx-auto py-10 px-4">
+    <h2 class="text-3xl font-bold text-center mb-8 border-b-4 border-neutral-700 inline-block pb-2">
+      Productos recomendados
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/HK416D.png" alt="HK416D" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">HK416D</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Variante moderna del M4 con mejor ergonomía y precisión. Muy usado en milsim.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">150.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/M249_SAW.png" alt="M249 SAW" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">M249 SAW</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Réplica de apoyo con gran cadencia de fuego. Ideal para cubrir a compañeros.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">200.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/MP5_Submachine_Gun.png" alt="MP5 Submachine Gun" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">MP5 Submachine Gun</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Subfusil eléctrico (AEG). Compacto, perfecto para juegos en interiores. Ligero y con gran cadencia de disparo.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">100.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+        <img src="./Assest/armas/P90.png" alt="P90" class="p-5">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">P90</h3>
+          <p class="text-sm text-gray-600 mt-1 h-16">
+            Subfusil eléctrico. diseño futurista y cargador superior. Popular en escenarios de combate cercano.
+          </p>
+          <p class="mt-5 text-center text-xl font-mono font-bold text-neutral-700">130.000 CLP</p>
+          <button class="mt-4 w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition">
+            Comprar
+          </button>
+        </div>
+      </div>
+
+    </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-neutral-800 text-gray-300 text-center py-6 mt-10">
+    <p>&copy; 2025 Airsoft Rock Galactic - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.thumb').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const src = btn.getAttribute('data-src');
+        const main = document.getElementById('mainImg');
+        if(src && main) main.src = src;
+      });
+    });
+
+    document.getElementById('buyBtn')?.addEventListener('click', () => {
+      alert('Añadido al carrito. Procede al pago en el checkout.');
+    });
+    document.getElementById('addCart')?.addEventListener('click', () => {
+      alert('Producto agregado al carrito.');
+    });
+  </script>
+
+</body>
+</html>
