@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Airsoft Rock Galactic</title>
+  <link rel="shortcut icon" href="./Assest/icon_02.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-3 px-4">
+      <div class="flex items-center space-x-2">
+        <img src="./Assest/icon_01.png" alt="Logo" class="w-12 h-12">
+        <a href="index.html">
+          <h1 class="text-2xl font-bold tracking-wide">Airsoft Rock Galactic</h1>
+        </a>
+      </div>
+      <div>
+        <button onclick="window.location.href='index.html'" class="bg-neutral-700 hover:bg-neutral-900 text-white px-4 py-2 rounded-lg transition" id="bt-seccion">
+        HOME
+      </button>
+      </div>
+    </div>
+
+    <nav class="bg-gray-200">
+      <ul class="flex justify-center space-x-8 py-2 text-sm font-medium uppercase tracking-wide">
+        <li><a href="Armas.html" class="hover:text-neutral-700">Armas</a></li>
+        <li><a href="#" class="hover:text-neutral-700">Vestimenta</a></li>
+        <li><a href="#" class="hover:text-neutral-700">Munición</a></li>
+        <li><a href="#" class="hover:text-neutral-700">Extras</a></li>
+        <li><a href="contacto.html" class="hover:text-neutral-700">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="flex justify-center items-center mt-10 px-4">
+    <div class="w-full max-w-lg bg-white rounded-xl shadow-lg overflow-hidden">
+      <div class="bg-gray-200 px-6 py-3 border-b">
+        <h3 class="font-semibold text-lg">Registro de usuario</h3>
+      </div>
+      <form action="#" method="POST" class="p-6 space-y-4">
+        
+        <div>
+          <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required
+                 class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none">
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Correo</label>
+          <input type="email" id="email" name="email" required
+                 class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none">
+        </div>
+
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+          <input type="password" id="password" name="password" required
+                 class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none">
+        </div>
+
+        <div>
+          <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirmar contraseña</label>
+          <input type="password" id="confirm-password" name="confirm-password" required
+                 class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none">
+        </div>
+
+        <div>
+          <label for="telefono" class="block text-sm font-medium text-gray-700">Teléfono (opcional)</label>
+          <input type="tel" id="telefono" name="telefono"
+                 class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="region" class="block text-sm font-medium text-gray-700">Región</label>
+            <select id="region" name="region" required
+                    class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none">
+              <option value="">-- Seleccione la región --</option>
+              <option value="rm">Región Metropolitana de Santiago</option>
+              <option value="araucania">Región de la Araucanía</option>
+              <option value="nuble">Región de Ñuble</option>
+            </select>
+          </div>
+          <div>
+            <label for="comuna" class="block text-sm font-medium text-gray-700">Comuna</label>
+            <select id="comuna" name="comuna" required
+                    class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none">
+              <option value="">-- Seleccione la comuna --</option>
+              <option value="linares">Linares</option>
+              <option value="longavi">Longaví</option>
+              <option value="concepcion">Concepción</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit"
+                class="w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition mt-4">
+          Registrar
+        </button>
+        <button type="submit" onclick="window.location.href='login_usuario.html'"
+                class="w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition" onclick="window.location.href='Registro_usuario.html'">
+          Iniciar seccion
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="bg-neutral-800 text-gray-300 text-center py-6 mt-10">
+    <p>&copy; 2025 Airsoft Rock Galactic - Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>
