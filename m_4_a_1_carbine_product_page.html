@@ -39,7 +39,7 @@
     </nav>
   </header>
 
-  <section info_page class="relative">
+  <section info_page class="relative" onclick="window.location.href='Blog_RifleAsalto.html'">
     <img src="./Assest/armas/blog_rifle_asalto.png" alt="Banner Airsoft" class="w-full h-[150px] object-cover brightness-75">
     <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
       <h2 class="text-4xl font-extrabold text-white drop-shadow-lg">Categoria: Rifles de Asalto</h2>
@@ -192,9 +192,6 @@
       <div class="mt-4 space-y-3 text-sm text-gray-700">
         <details class="p-3 border rounded"><summary class="font-medium">¿Puedo usar munición de 0.30g?</summary><p class="mt-2 text-gray-600">Sí, pero a FPS altos puede afectar la precisión. Ajusta el hop-up y comprueba el rendimiento.</p></details>
         <details class="p-3 border rounded"><summary class="font-medium">¿Se puede usar en juegos con reglas limitadas de FPS?</summary><p class="mt-2 text-gray-600">Sí, ajustando el gearbox o cambiando resortes para cumplir la normativa del campo.</p></details>
-      </div>
-    </section>
-
     <section Productos class="container mx-auto py-10 px-4">
     <h2 class="text-3xl font-bold text-center mb-8 border-b-4 border-neutral-700 inline-block pb-2">
       Productos similares
@@ -316,23 +313,6 @@
   <footer class="bg-neutral-800 text-gray-300 text-center py-6 mt-10">
     <p>&copy; 2025 Airsoft Rock Galactic - Todos los derechos reservados</p>
   </footer>
-
-  <script>
-    document.querySelectorAll('.thumb').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const src = btn.getAttribute('data-src');
-        const main = document.getElementById('mainImg');
-        if(src && main) main.src = src;
-      });
-    });
-
-    document.getElementById('buyBtn')?.addEventListener('click', () => {
-      alert('Añadido al carrito. Procede al pago en el checkout.');
-    });
-    document.getElementById('addCart')?.addEventListener('click', () => {
-      alert('Producto agregado al carrito.');
-    });
-  </script>
 
 </body>
 </html>

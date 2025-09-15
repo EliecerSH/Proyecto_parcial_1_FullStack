@@ -40,10 +40,10 @@
       <div class="bg-gray-200 px-6 py-3 border-b">
         <h3 class="font-semibold text-lg">Registro de usuario</h3>
       </div>
-      <form action="#" method="POST" class="p-6 space-y-4">
+      <form action="#" method="POST" class="p-6 space-y-4" id="RegistroUsuario">
         
         <div>
-          <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre completo</label>
+          <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
           <input type="text" id="nombre" name="nombre" required
                  class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none">
         </div>
@@ -103,6 +103,8 @@
                 class="w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition" onclick="window.location.href='Registro_usuario.html'">
           Iniciar seccion
         </button>
+        <div id="mensajeResultadoLogin">
+        </div>
       </form>
     </div>
   </main>
@@ -110,6 +112,8 @@
   <footer class="bg-neutral-800 text-gray-300 text-center py-6 mt-10">
     <p>&copy; 2025 Airsoft Rock Galactic - Todos los derechos reservados</p>
   </footer>
+
+  <script src="script_registro.js"></script>
 
 </body>
 </html>

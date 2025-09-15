@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Estilos personalizados para mejorar la apariencia  aaa */
+
     .sidebar {
       width: 250px;
       transition: all 0.3s ease;
@@ -27,7 +27,7 @@
         display: none;
       }
     }
-    /* Estilo para tablas */
+
     table {
       border-collapse: separate;
       border-spacing: 0;
@@ -45,7 +45,7 @@
     tr:hover {
       background-color: #f8fafc;
     }
-    /* Estilo para formularios */
+
     .form-group {
       margin-bottom: 1.5rem;
     }
@@ -97,7 +97,6 @@
   </style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
-  <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center py-3 px-4">
       <div class="flex items-center space-x-2">
@@ -109,7 +108,7 @@
       </div>
       <div class="flex items-center space-x-4">
         <span class="text-sm">Hola, Administrador</span>
-        <button class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition">
+        <button onclick="window.location.href='login_admin.html'" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition">
           Cerrar sesión
         </button>
       </div>
@@ -117,7 +116,6 @@
   </header>
 
   <div class="flex">
-    <!-- Sidebar -->
     <aside class="sidebar bg-neutral-800 text-white min-h-screen fixed h-full overflow-y-auto">
       <nav class="p-4">
         <ul class="space-y-2">

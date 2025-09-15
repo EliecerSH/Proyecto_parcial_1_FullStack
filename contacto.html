@@ -50,36 +50,43 @@
         <h3 class="font-semibold text-lg text-center">Formulario de Contacto</h3>
       </div>
 
-      <form action="#" method="POST" class="p-6 space-y-4">
+      <form action="#" method="POST" class="p-6 space-y-4" id="formularioContacto">
         <div>
           <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre completo</label>
           <input type="text" id="nombre" name="nombre" required
-                 class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none">
+                 class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none " placeholder="ej: Tomas">
         </div>
 
         <div>
           <label for="email" class="block text-sm font-medium text-gray-700">Correo</label>
           <input type="email" id="email" name="email" required
-                 class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none">
+                 class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none" placeholder="ej: Tomas@gmail.com">
         </div>
 
         <div>
           <label for="contenido" class="block text-sm font-medium text-gray-700">Contenido</label>
           <textarea id="contenido" name="contenido" rows="5" required
-                 class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none"></textarea>
+                 class="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neutral-700 focus:outline-none" placeholder="escriba aqui.."></textarea>
         </div>
 
         <button type="submit"
                 class="w-full bg-neutral-700 hover:bg-neutral-900 text-white py-2 rounded-lg transition mt-4">
           Enviar mensaje
         </button>
+
+        <div id="mensajeResultado">
+        </div>
       </form>
+
+      
     </div>
   </main>
 
   <footer class="bg-neutral-800 text-gray-300 text-center py-6 mt-10">
     <p>&copy; 2025 Airsoft Rock Galactic - Todos los derechos reservados</p>
   </footer>
+
+  <script src="script_contacto.js"></script>
 
 </body>
 </html>
