@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./Assest/icon_02.png" type="image/x-icon">
-  <title>Airsoft Rock Galactic</title>
+  <title>Carrito de Compras - Airsoft Rock Galactic</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
+
 
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center py-3 px-4">
@@ -18,48 +19,39 @@
         </a>
       </div>
       <div>
-        <button onclick="window.location.href='Carrito.html'" class="px-4 py-2"><img src="./Assest/carrito_icon.png" alt=""width="30px"></button>
-        <button onclick="window.location.href='login_usuario.html'" class="bg-neutral-700 hover:bg-neutral-900 text-white px-4 py-2 rounded-lg transition" id="bt-seccion">
-        Iniciar sesión
-      </button>
-      <button onclick="window.location.href='Registro_usuario.html'" class="bg-neutral-700 hover:bg-neutral-900 text-white px-4 py-2 rounded-lg transition" id="bt-seccion">
-        Registrarse
-      </button>
+        <button onclick="window.location.href='login_usuario.html'" class="bg-neutral-700 hover:bg-neutral-900 text-white px-4 py-2 rounded-lg transition">
+          Iniciar sesión
+        </button>
+        <button onclick="window.location.href='Registro_usuario.html'" class="bg-neutral-700 hover:bg-neutral-900 text-white px-4 py-2 rounded-lg transition">
+          Registrarse
+        </button>
       </div>
     </div>
-
     <nav class="bg-gray-200">
       <ul class="flex justify-center space-x-8 py-2 text-sm font-medium uppercase tracking-wide">
-        <li><a href="#" class="hover:text-neutral-700">Armas</a></li>
+        <li><a href="Armas.html" class="hover:text-neutral-700">Armas</a></li>
         <li><a href="#" class="hover:text-neutral-700">Vestimenta</a></li>
         <li><a href="#" class="hover:text-neutral-700">Munición</a></li>
         <li><a href="#" class="hover:text-neutral-700">Extras</a></li>
         <li><a href="contacto.html" class="hover:text-neutral-700">Contacto</a></li>
+        <li><a href="Nosotros.html" class="hover:text-neutral-700">Nosotros</a></li>
+        <li><a href="carrito.html" class="font-bold text-neutral-900">Carrito</a></li>
       </ul>
     </nav>
   </header>
 
-  <section info_page class="relative">
-    <img src="./Assest/img_01.jpg" alt="Banner Airsoft" class="w-full h-[400px] object-cover brightness-75">
-    <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
-      <h2 class="text-4xl font-extrabold text-white drop-shadow-lg">Tu tienda online de Airsoft</h2>
-      <p class="mt-3 max-w-2xl text-lg text-gray-200">
-        Réplicas, accesorios y equipamiento para que vivas la adrenalina, estrategia y acción del airsoft. 
-        Productos de calidad para principiantes y jugadores experimentados.
-      </p>
-    </div>
-  </section>
-
-  <section Productos class="container mx-auto py-10 px-4">
+  <section class="container mx-auto py-10 px-4 min-h-[750px]">
     <h2 class="text-3xl font-bold text-center mb-8 border-b-4 border-neutral-700 inline-block pb-2">
-      Productos: Armas
+      Carrito de Compras
     </h2>
-
-    <div id="product" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">     
-
+    <div id="carrito-lista" class="space-y-6"></div>
+    <div class="mt-10 bg-white p-6 rounded-xl shadow-lg max-w-md mx-auto">
+      <h3 class="text-xl font-bold mb-4">Resumen de compra</h3>
+      <p id="carrito-total" class="text-lg font-mono font-bold text-neutral-700">Total: $0 CLP</p>
+      <button class="mt-4 w-full bg-green-600 hover:bg-green-800 text-white py-2 rounded-lg transition">
+        Proceder al Pago
+      </button>
     </div>
-
-
   </section>
 
   <footer class="bg-neutral-800 text-gray-300 text-center py-6 mt-10">

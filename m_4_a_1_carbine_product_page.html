@@ -18,6 +18,7 @@
         </a>
       </div>
       <div>
+        <button onclick="window.location.href='Carrito.html'" class="px-4 py-2"><img src="./Assest/carrito_icon.png" alt=""width="30px"></button>
         <button onclick="window.location.href='login_usuario.html'" class="bg-neutral-700 hover:bg-neutral-900 text-white px-4 py-2 rounded-lg transition" id="bt-seccion">
         Iniciar sesión
       </button>
@@ -86,7 +87,7 @@
       </section>
 
       <aside class="md:col-span-1">
-        <div class="bg-white rounded-xl shadow-lg p-6 sticky top-28">
+        <div class="bg-white rounded-xl shadow-lg p-6  top-28">
           <p class="text-sm text-gray-500">SKU: <span class="font-mono">M4A1-AR-01</span></p>
           <h3 class="mt-3 text-3xl font-bold text-neutral-700">150.000 CLP</h3>
 
@@ -95,7 +96,7 @@
             <input id="qty" type="number" min="1" value="1" class="w-full mt-2 border rounded px-3 py-2">
           </div>
 
-          <button id="buyBtn" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition">Comprar ahora</button>
+          <button onclick="agregarCarrito(1)" id="buyBtn" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition">Comprar ahora</button>
 
           <button id="addCart" class="mt-3 w-full border border-neutral-700 hover:bg-neutral-100 text-neutral-800 py-2 rounded-lg transition">Agregar al carrito</button>
 
@@ -214,7 +215,7 @@
       </div>
 
       <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
-        <img src="./Assest/armas/FN _SCAR-L.png" alt="FN SCAR-L" class="p-5">
+        <img src="./Assest/armas/Scar.png" alt="FN SCAR-L" class="p-5">
         <div class="p-4">
           <h3 class="text-lg font-bold">FN SCAR-L</h3>
           <p class="text-sm text-gray-600 mt-1 h-16">
@@ -313,6 +314,19 @@
   <footer class="bg-neutral-800 text-gray-300 text-center py-6 mt-10">
     <p>&copy; 2025 Airsoft Rock Galactic - Todos los derechos reservados</p>
   </footer>
+
+  <script src="script_producto.js"></script>
+
+  <script>
+    document.querySelectorAll('.thumb').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const src = btn.getAttribute('data-src');
+        const main = document.getElementById('mainImg');
+        if(src && main) main.src = src;
+      });
+    });
+
+  </script>
 
 </body>
 </html>
